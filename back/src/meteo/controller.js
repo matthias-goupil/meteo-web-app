@@ -30,7 +30,8 @@ const getWeatherByLocation = async (req, res) => {
     try {
         const data = await fetch(`${meteoApiUrl}?appid=${meteoApiKey}&lon=${lon}&lat=${lat}&lang=${lang}&units=metric`)
         .then(res => res.json())
-        data.weather = data.weather.map(element => ({
+        console.log(data)
+        data.weathers = data.weathers.map(element => ({
             ...element,
             icon: {
                 id: element.icon,
